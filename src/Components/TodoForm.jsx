@@ -23,7 +23,7 @@ export default function TodoForm() {
   }
   return (
     <>
-      <div className="display: flex justify-center align-middle gap-1.5">
+      <div className="display: flex justify-center align-middle mt-1 gap-1.5">
         <input
           type="text"
           value={input}

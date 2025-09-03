@@ -2,7 +2,7 @@ import { MdDelete } from "react-icons/md";
 
 export default function TodoItem({ tasks, handleDelete, handleToggle }) {
   return (
-    <ul className="border-2 border-black bg-purple-200 mt-4  w-full max-w-2xl mx-auto rounded-lg ">
+    <ul className="border-2 border-black bg-purple-200 mt-4 h-auto w-full max-w-2xl mx-auto rounded-lg ">
       {tasks.map((task, index) => (
         <li
           key={index}
