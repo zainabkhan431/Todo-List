@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
+
 import Button from "./Components/Button";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   function handleClick() {
     if (!input.trim()) return;
-    setTasks([...tasks, { text: input, completed: false }]);
+    setTasks([...tasks, { text: input }]);
     setInput("");
   }
 
@@ -16,14 +17,13 @@ function App() {
     setTasks(tasks.filter((task, i) => i !== index));
     console.log("deleted");
   }
-
   function handleDeleteAll() {
     setTasks([]);
   }
 
   return (
     <div className="bg-white flex justify-center items-center h-screen">
-      <div className="bg-purple-200 shadow-lg  w-full max-w-xl p-6 flex flex-col">
+      <div className="  w-full max-w-xl p-6 flex flex-col">
         <h1 className="text-center font-extrabold text-3xl text-purple-900 mb-4">
           My Todo List
         </h1>
@@ -32,10 +32,11 @@ function App() {
           <input
             type="text"
             value={input}
-            className="flex-1 border-2 border-purple-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-1 border-2 border-purple-400 rounded-md px-3 py-2 focus:outline-none"
             placeholder="Enter a task..."
             onChange={(e) => setInput(e.target.value)}
           />
+
           <Button
             onClick={handleClick}
             text="Add"
@@ -54,7 +55,7 @@ function App() {
               <MdDelete
                 onClick={() => handleDelete(index)}
                 className="text-red-600 hover:text-red-800 p-1 rounded-full hover:bg-red-100 cursor-pointer"
-                size={22}
+                size={24}
               />
             </li>
           ))}
