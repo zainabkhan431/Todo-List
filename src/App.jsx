@@ -9,7 +9,7 @@ function App() {
 
   function handleClick() {
     if (!input.trim()) return;
-    setTasks([...tasks, { text: input }]);
+    setTasks([{ text: input }, ...tasks]);
     setInput("");
   }
 
